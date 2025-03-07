@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/imgeffect.css" />
+    <link rel="stylesheet" href="css/oneForAll.css" />
+    <link rel="stylesheet" href="/css/product.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img
+              src="/img/u-food.png"
+              alt="U Food"
+              width="50px"
+              height="auto"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+            aria-controls="navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <form role="search" class="mx-auto">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Tìm kiếm"
+                  aria-label="Tìm kiếm"
+                  tabindex="-1"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Tìm kiếm
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Khuyến mại</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Hỗ trợ
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Trợ giúp</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Liên hệ với chúng tôi</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog.html">Blog</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a
+                  class="nav-link position-relative"
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasExample"
+                  role="button"
+                  aria-controls="offcanvasExample"
+                  >Giỏ hàng
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none"
+                    id="cart-length"
+                    >0
+                  </span></a
+                >
+              </li>
+              <li class="nav-item button-group">
+                <div class="dropdown text-end d-none" id="avatar">
+                  <a
+                    href="#"
+                    class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="true"
+                  >
+                    <img
+                      src="/img/account.jpg"
+                      alt="account"
+                      width="32"
+                      height="32"
+                      class="rounded-circle"
+                    />
+                    <strong id="avatarUsername"></strong>
+                  </a>
+                  <ul
+                    class="dropdown-menu text-small"
+                    style="
+                      position: absolute;
+                      inset: 0px 0px auto auto;
+                      margin: 0px;
+                      transform: translate(0px, 34px);
+                    "
+                    data-popper-placement="bottom-end"
+                  >
+                    <li><a class="dropdown-item" href="#">Cài đặt</a></li>
+                    <li><a class="dropdown-item" href="#">Thông tin</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item logout" href="#">Đăng xuất</a>
+                    </li>
+                  </ul>
+                </div>
+                <div id="control">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Đăng nhập
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Đăng ký
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Đăng nhập / Đăng ký</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="d-grid">
+                <label class="form-label">Tên người dùng</label>
+                <input
+                  id="username"
+                  type="text"
+                  class="form-control"
+                  name="username"
+                  required
+                />
+              </div>
+              <div class="d-grid">
+                <label class="form-label">Mật khẩu:</label>
+                <input
+                  id="pass"
+                  type="password"
+                  class="form-control mb-2"
+                  name="pass"
+                  placeholder="************"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Tên người dùng hoặc mật khẩu không chính xác!
+                </div>
+                <button class="btn btn-primary btn-login">Đăng nhập</button>
+                <p><a href="#">Quên mật khẩu?</a></p>
+              </div>
+              <div class="d-grid control">
+                <p class="text-divider text-center">
+                  hoặc đăng nhập/đăng ký với
+                </p>
+                <button type="button" class="btn btn-primary mb-2">
+                  <img src="/img/google.png" alt="" />Google
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <img src="/img/facebook.png" alt="" />Facebook
+                </button>
+              </div>
+            </div>
+            <div class="modal-footer text-center">
+              <p>
+                Bằng cách đăng ký, bạn đồng ý với
+                <a href="termsandconditions.html">Điều khoản &amp; Điều kiện</a>
+                của chúng tôi và bạn đã đọc
+                <a href="privacy-notice.html">Chính Sách Quyền Riêng Tư</a>
+                của chúng tôi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+        style="width: 300px"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Giỏ hàng</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="container cart"></div>
+        </div>
+        <div class="offcanvas-footer">
+          <div class="container">
+            <div class="col d-flex flex-column pb-3">
+              <a class="btn btn-warning" href="/cart.html" role="button"
+                >Xem giỏ hàng</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="liveToast"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-bs-delay="1000"
+        >
+          <div class="toast-header">
+            <strong class="me-auto">Thông báo</strong>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body" id="toast-body">
+            Bạn phải đăng nhập để có thể thêm sản phẩm vào giỏ hàng.
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="" style="padding-top: 76px">
+      <nav
+        style="
+          --bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%278%27 height=%278%27%3E%3Cpath d=%27M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z%27 fill=%276c757d%27/%3E%3C/svg%3E');
+          background: #f8eee3;
+          height: 60px;
+        "
+        aria-label="breadcrumb"
+      >
+        <ol class="breadcrumb pt-3 ms-3">
+          <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+          <li class="breadcrumb-item"><a href="shop.html">Sản phẩm</a></li>
+          <li
+            class="breadcrumb-item active breadcrumb-active"
+            aria-current="page"
+          ></li>
+        </ol>
+      </nav>
+    </section>
+    <main class="pb-5" id="main">
+      <div class="container-fluid mt-5" id="flag">
+        <div class="row product"></div>
+      </div>
+      <nav class="navbar navbar1 sticky-top p-0 bg-light d-none"></nav>
+      <div class="container-fluid">
+        <div class="row my-5">
+          <div class="col">
+            <ul class="nav nav-tabs d-flex justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#menu1"
+                  >Mô tả</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#menu2"
+                  >Thông tin bổ sung</a
+                >
+              </li>
+            </ul>
+            <div class="tab-content text-center">
+              <div class="tab-pane container active" id="menu1"></div>
+              <div class="tab-pane container fade" id="menu2">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">Trọng lượng</th>
+                      <th scope="col">Kích thước</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td id="weight"></td>
+                      <td id="dimensions"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row also-like my-5">
+          <h2 class="text-divider">Có thể bạn sẽ thích...</h2>
+        </div>
+        <div class="row related mt-5">
+          <h2 class="text-divider">Sản phẩm liên quan</h2>
+        </div>
+      </div>
+    </main>
+    <footer style="background-color: antiquewhite">
+      <div class="container-fluid">
+        <div class="row pt-5">
+          <div class="col">
+            <img src="/img/u-food.png" class="img-fluid" alt="" width="100px" />
+          </div>
+          <div class="col border-end">
+            <h2>Địa chỉ</h2>
+            <p class="a">Bình Minh - Khoái Châu - Hưng Yên</p>
+            <p class="a">
+              Thứ hai - Thứ bảy: <br /><span style="color: #000000"
+                >8:00 sa - 4:00 ch</span
+              >
+            </p>
+            <p class="a">
+              Chủ nhật: <br /><span style="color: #000000"
+                >9:00 sa - 5:00 ch</span
+              >
+            </p>
+          </div>
+          <div class="col">
+            <h2>Về U Food</h2>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#"><span>Cách đặt hàng</span></a>
+              </li>
+              <li>
+                <a href="#"><span>Liên hệ chúng tôi</span></a>
+              </li>
+              <li>
+                <a href="#"><span>Trợ giúp</span></a>
+              </li>
+              <li><a href="#">Về chúng tôi</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Tài khoản</h2>
+            <ul class="list-unstyled">
+              <li><a href="#">Tài khoản của tôi</a></li>
+              <li><a href="#">Liên hệ</a></li>
+              <li>
+                <a
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasExample"
+                  role="button"
+                  aria-controls="offcanvasExample"
+                  >Giỏ hàng</a
+                >
+              </li>
+              <li><a href="/shop.html">Mua sắm</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Danh mục</h2>
+            <ul class="list-unstyled">
+              <li><a href="#">Trái cây &amp; Rau củ</a></li>
+              <li><a href="#">Sữa</a></li>
+              <li><a href="#">Thực phẩm đóng gói</a></li>
+              <li><a href="#">Đồ uống</a></li>
+              <li><a href="#">Thể chất &amp; Tinh thần</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Theo dõi</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://www.facebook.com/chutuanvu0206"
+                  ><img
+                    src="/img/facebook.png"
+                    class="img-fluid"
+                    alt="Facebook"
+                  />
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/chutuanvu0206"
+                  ><img
+                    src="/img/instagram.png"
+                    class="img-fluid"
+                    alt="Instagram"
+                  />Instagram</a
+                >
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@chutuanvu0206"
+                  ><img
+                    src="/img/tikTok.png"
+                    class="img-fluid"
+                    alt="TikTok"
+                  />TikTok</a
+                >
+              </li>
+              <li>
+                <a href="https://youtube.com/@chutuanvu2004"
+                  ><img
+                    src="/img/youtube.png"
+                    class="img-fluid"
+                    alt="YouTube"
+                  />YouTube</a
+                >
+              </li>
+              <li>
+                <a href="https://t.me/chutuanvu0206"
+                  ><img
+                    src="img/telegram.png"
+                    class="img-fluid"
+                    alt="Telegram"
+                  />Telegram</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <hr />
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="text-center py-4">
+              Copyright © 2024 U Food. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/oneForAll.js"></script>
+  <script src="/js/product.js"></script>
+</html>

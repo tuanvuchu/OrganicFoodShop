@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - U Food</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/imgeffect.css" />
+    <link rel="shortcut icon" href="img/ico.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img
+              src="/img/u-food.png"
+              alt="U Food"
+              width="50px"
+              height="auto"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+            aria-controls="navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <form role="search" class="mx-auto">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Tìm kiếm"
+                  aria-label="Tìm kiếm"
+                  tabindex="-1"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Tìm kiếm
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Khuyến mại</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Hỗ trợ
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Trợ giúp</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Liên hệ với chúng tôi</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog.html">Blog</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a
+                  class="nav-link position-relative"
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasExample"
+                  role="button"
+                  aria-controls="offcanvasExample"
+                  >Đơn hàng của tôi
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none"
+                    id="cart-length"
+                  >
+                  </span
+                ></a>
+              </li>
+              <li class="nav-item button-group">
+                <div class="dropdown text-end d-none" id="avatar">
+                  <a
+                    href="#"
+                    class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="true"
+                  >
+                    <img
+                      src="/img/account.jpg"
+                      alt="account"
+                      width="32"
+                      height="32"
+                      class="rounded-circle"
+                    />
+                    <strong id="avatarUsername"></strong>
+                  </a>
+                  <ul
+                    class="dropdown-menu text-small"
+                    style="
+                      position: absolute;
+                      inset: 0px 0px auto auto;
+                      margin: 0px;
+                      transform: translate(0px, 34px);
+                    "
+                    data-popper-placement="bottom-end"
+                  >
+                    <li><a class="dropdown-item" href="#">Cài đặt</a></li>
+                    <li><a class="dropdown-item" href="#">Thông tin</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item logout" href="#">Đăng xuất</a>
+                    </li>
+                  </ul>
+                </div>
+                <div id="control">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Đăng nhập
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Đăng ký
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5">Đăng nhập / Đăng ký</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-grid">
+              <label class="form-label">Tên người dùng</label>
+              <input
+                id="username"
+                type="text"
+                class="form-control"
+                name="username"
+                required
+              />
+            </div>
+            <div class="d-grid">
+              <label class="form-label">Mật khẩu:</label>
+              <input
+                id="pass"
+                type="password"
+                class="form-control mb-2"
+                name="pass"
+                placeholder="************"
+                required
+              />
+              <div class="invalid-feedback">
+                Tên người dùng hoặc mật khẩu không chính xác!
+              </div>
+              <button class="btn btn-primary btn-login">Đăng nhập</button>
+              <p><a href="#">Quên mật khẩu?</a></p>
+            </div>
+            <div class="d-grid control">
+              <p class="text-divider text-center">hoặc đăng nhập/đăng ký với</p>
+              <button type="button" class="btn btn-primary mb-2">
+                <img src="/img/google.png" alt="" />Google
+              </button>
+              <button type="button" class="btn btn-primary">
+                <img src="/img/facebook.png" alt="" />Facebook
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer text-center">
+            <p>
+              Bằng cách đăng ký, bạn đồng ý với
+              <a href="termsandconditions.html">Điều khoản &amp; Điều kiện</a>
+              của chúng tôi và bạn đã đọc
+              <a href="privacy-notice.html">Chính Sách Quyền Riêng Tư</a>
+              của chúng tôi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumb position-relative pt-5">
+      <img src="/img/breadcrumb (2).jpg" class="img-fluid" alt="" />
+      <nav
+        class="position-absolute top-50 start-0 translate-middle-y"
+        style="
+          --bs-breadcrumb-divider: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%278%27 height=%278%27%3E%3Cpath d=%27M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z%27 fill=%276c757d%27/%3E%3C/svg%3E');
+        "
+        aria-label="breadcrumb"
+      >
+        <h2>Blog của chúng tôi</h2>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Blog</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card zi zi-hover" style="width: 18rem">
+            <a href="/blog-detail.html">
+              <img src="/img/blog (8).jpg" class="card-img-top" alt="..." />
+            </a>
+            <div class="card-body">
+              <p class="card-title">
+                <i class="bi bi-calendar"></i> 24/11/2024 /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"> 0</i>
+              </p>
+              <h5 class="card-title">
+                <a href="/blog-detail.html"
+                  >Bánh sừng bò socola dễ làm, mềm mại và giòn</a
+                >
+              </h5>
+              <p class="card-text">
+                Với lớp vỏ ngoài giòn tan, bên trong mềm mịn và thơm lừng, bánh
+                sừng bò socola là lựa chọn hoàn hảo cho mọi bữa sáng hay bữa
+                phụ....
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card zi zi-hover" style="width: 18rem">
+            <a href="/blog-detail.html"
+              ><img src="/img/blog (7).jpg" class="card-img-top" alt="..."
+            /></a>
+
+            <div class="card-body">
+              <p class="card-title">
+                <i class="bi bi-calendar"></i>24/11/2024 /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"> 0</i>
+              </p>
+              <h5 class="card-title">
+                <a href="/blog-detail.html">Vì tình yêu với ẩm thực </a>
+              </h5>
+              <p class="card-text">
+                Mỗi món ăn là một hành trình, một câu chuyện được kể qua từng
+                nguyên liệu tươi ngon và kỹ thuật chế biến tinh tế...
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card zi zi-hover" style="width: 18rem">
+            <a href="/blog-detail.html"
+              ><img src="/img/blog (9).jpg" class="card-img-top" alt="..."
+            /></a>
+
+            <div class="card-body">
+              <p class="card-title">
+                <i class="bi bi-calendar"></i>24/11/2024 /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"> 0</i>
+              </p>
+              <h5 class="card-title">
+                <a href="/blog-detail.html"
+                  >Súp rau củ với thảo mộc và gia vị tươi ngon</a
+                >
+              </h5>
+              <p class="card-text">
+                Súp rau củ của chúng tôi là sự kết hợp hoàn hảo giữa những
+                nguyên liệu tươi mới và thảo mộc thơm ngát, mang đến hương vị
+                đậm đà và bổ dưỡng...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card zi zi-hover" style="width: 18rem">
+            <a href="/blog-detail.html">
+              <img src="/img/blog (6).jpg" class="card-img-top" alt="..." />
+            </a>
+            <div class="card-body">
+              <p class="card-title">
+                <i class="bi bi-calendar"></i>24/11/2024 /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"> 0</i>
+              </p>
+              <h5 class="card-title">
+                <a href="/blog-detail.html">Nấu ăn với dầu ô liu </a>
+              </h5>
+              <p class="card-text">
+                Dầu ô liu là lựa chọn tuyệt vời cho mọi món ăn, mang đến hương
+                vị thơm ngon, nhẹ nhàng nhưng đầy đậm đà...
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card zi zi-hover" style="width: 18rem">
+            <a href="/blog-detail.html">
+              <img src="/img/blog (5).jpg" class="card-img-top" alt="..." />
+            </a>
+            <div class="card-body">
+              <p class="card-title">
+                <i class="bi bi-calendar"></i>24/11/2024 /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"> 0</i>
+              </p>
+              <h5 class="card-title">
+                <a href="/blog-detail.html"
+                  >Thưởng thức buổi tụ họp tiếp theo của bạn
+                </a>
+              </h5>
+              <p class="card-text">
+                Mỗi buổi tụ họp là một cơ hội để kết nối, chia sẻ và tạo ra
+                những kỷ niệm đẹp. Hãy để những món ăn tuyệt vời và không gian
+                ấm cúng trở thành phần không thể thiếu trong những khoảnh khắc
+                đặc biệt ấy...
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card zi zi-hover" style="width: 18rem">
+            <a href="/blog-detail.html"></a>
+            <div class="card-body">
+              <a href="/blog-detail.html">
+                <img src="/img/blog (3).jpg" class="card-img-top" alt="..." />
+              </a>
+
+              <p class="card-title">
+                <i class="bi bi-calendar"></i>24/11/2024 /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"> 0</i>
+              </p>
+              <h5 class="card-title">
+                <a href="/blog-detail.html"
+                  >Những Điều Bạn Cần Biết Về Detox
+                </a>
+              </h5>
+              <p class="card-text">
+                Đỗ Đức Thụy, một chuyên gia dinh dưỡng, giải thích "detox" thực
+                sự có nghĩa là gì và tại sao chúng ta cần thực hiện nó. Detox
+                không chỉ là một xu hướng hay chế độ ăn uống tạm thời, mà là một
+                cách để cơ thể tự làm sạch, loại bỏ độc tố tích tụ từ môi trường
+                và thực phẩm...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card zi zi-hover" style="width: 18rem">
+            <a href="/blog-detail.html"
+              ><img src="/img/blog (4).jpg" class="card-img-top" alt="..."
+            /></a>
+
+            <div class="card-body">
+              <p class="card-title">
+                <i class="bi bi-calendar"></i>24/11/2024 /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"> 0</i>
+              </p>
+              <h5 class="card-title">
+                <a href="/blog-detail.html"
+                  >Pizza với Gà, Cà Chua và Húng Quế
+                </a>
+              </h5>
+              <p class="card-text">
+                Một chiếc pizza tuyệt vời, kết hợp giữa vị ngon ngọt của cà chua
+                tươi, hương thơm đặc trưng của húng quế, và thịt gà mềm mịn, tạo
+                nên một sự hòa quyện hoàn hảo...
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card zi zi-hover" style="width: 18rem">
+            <a href="/blog-detail.html">
+              <img src="/img/blog (10).jpg" class="card-img-top" alt="..." />
+            </a>
+            <div class="card-body">
+              <p class="card-title">
+                <i class="bi bi-calendar"></i>24/11/2024 /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"> 0</i>
+              </p>
+              <h5 class="card-title">
+                <a href="/blog-detail.html">5 Lý Do Bạn Cần Ăn Rau Mỗi Ngày </a>
+              </h5>
+              <p class="card-text">
+                Rau xanh không chỉ là một phần quan trọng trong chế độ ăn uống
+                lành mạnh, mà còn mang lại nhiều lợi ích sức khỏe vượt trội.
+                Dưới đây là 5 lý do bạn nên bổ sung rau vào mỗi bữa ăn:...
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card zi zi-hover" style="width: 18rem">
+            <a href="/blog-detail.html">
+              <img src="/img/blog (1).jpg" class="card-img-top" alt="..." />
+            </a>
+            <div class="card-body">
+              <p class="card-title">
+                <i class="bi bi-calendar"></i>24/11/2024 /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"> 0</i>
+              </p>
+              <h5 class="card-title">
+                <a href="/blog-detail.html">Cá Hồi Nướng Tỏi </a>
+              </h5>
+              <p class="card-text">
+                Món cá hồi nướng tỏi là sự kết hợp hoàn hảo giữa vị ngọt tự
+                nhiên của cá hồi tươi và hương thơm đậm đà từ tỏi nướng...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row py-3">
+        <div class="col">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#">Quay lại</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Tiếp</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+      style="width: 300px"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Giỏ hàng</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="container cart"></div>
+      </div>
+      <div class="offcanvas-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col d-flex flex-column pb-3">
+              <a class="btn btn-warning" href="/cart.html" role="button"
+                >Xem giỏ hàng</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/oneForAll.js"></script>
+</html>

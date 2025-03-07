@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - U Food</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="shortcut icon" href="img/ico.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/blog-detail.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img
+              src="/img/u-food.png"
+              alt="U Food"
+              width="50px"
+              height="auto"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+            aria-controls="navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <form role="search" class="mx-auto">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Tìm kiếm"
+                  aria-label="Tìm kiếm"
+                  tabindex="-1"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Tìm kiếm
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Khuyến mại</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Hỗ trợ
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Trợ giúp</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Liên hệ với chúng tôi</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog.html">Blog</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a
+                  class="nav-link position-relative"
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasExample"
+                  role="button"
+                  aria-controls="offcanvasExample"
+                  >Đơn hàng của tôi
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none"
+                    id="cart-length"
+                  >
+                  </span
+                ></a>
+              </li>
+              <li class="nav-item button-group">
+                <div class="dropdown text-end d-none" id="avatar">
+                  <a
+                    href="#"
+                    class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="true"
+                  >
+                    <img
+                      src="/img/account.jpg"
+                      alt="account"
+                      width="32"
+                      height="32"
+                      class="rounded-circle"
+                    />
+                    <strong id="avatarUsername"></strong>
+                  </a>
+                  <ul
+                    class="dropdown-menu text-small"
+                    style="
+                      position: absolute;
+                      inset: 0px 0px auto auto;
+                      margin: 0px;
+                      transform: translate(0px, 34px);
+                    "
+                    data-popper-placement="bottom-end"
+                  >
+                    <li><a class="dropdown-item" href="#">Cài đặt</a></li>
+                    <li><a class="dropdown-item" href="#">Thông tin</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item logout" href="#">Đăng xuất</a>
+                    </li>
+                  </ul>
+                </div>
+                <div id="control">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Đăng nhập
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Đăng ký
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Đăng nhập / Đăng ký</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="d-grid">
+                <label class="form-label">Tên người dùng</label>
+                <input
+                  id="username"
+                  type="text"
+                  class="form-control"
+                  name="username"
+                  required
+                />
+              </div>
+              <div class="d-grid">
+                <label class="form-label">Mật khẩu:</label>
+                <input
+                  id="pass"
+                  type="password"
+                  class="form-control mb-2"
+                  name="pass"
+                  placeholder="************"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Tên người dùng hoặc mật khẩu không chính xác!
+                </div>
+                <button class="btn btn-primary btn-login">Đăng nhập</button>
+                <p><a href="#">Quên mật khẩu?</a></p>
+              </div>
+              <div class="d-grid control">
+                <p class="text-divider text-center">
+                  hoặc đăng nhập/đăng ký với
+                </p>
+                <button type="button" class="btn btn-primary mb-2">
+                  <img src="/img/google.png" alt="" />Google
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <img src="/img/facebook.png" alt="" />Facebook
+                </button>
+              </div>
+            </div>
+            <div class="modal-footer text-center">
+              <p>
+                Bằng cách đăng ký, bạn đồng ý với
+                <a href="termsandconditions.html">Điều khoản &amp; Điều kiện</a>
+                của chúng tôi và bạn đã đọc
+                <a href="privacy-notice.html">Chính Sách Quyền Riêng Tư</a>
+                của chúng tôi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section style="padding-top: 76px">
+      <div
+        class="pt-3"
+        style="height: 50px; background: #f8eee3; --bs-breadcrumb-divider: '>'"
+      >
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="/blog.html">Blog</a></li>
+            <li
+              class="breadcrumb-item active breadcrumb-active"
+              aria-current="page"
+            >
+              Pizza với Gà, Cà Chua và Húng Quế
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+    <main>
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col">
+            <article class="blog-post">
+              <h1 class="blog-title fs-1">Pizza với Gà, Cà Chua và Húng Quế</h1>
+              <p class="blog-post-meta blog-infor text-decoration-underline">
+                <i class="bi bi-calendar"></i> 24/11, 2024 bởi /
+                <i class="bi bi-person"></i> Admin /
+                <i class="bi bi-chat-left"></i>
+              </p>
+              <img src="/img/blog (4).jpg" class="img-fluid" alt="" />
+
+              <hr />
+              <p>
+                Pizza với gà, cà chua và húng quế là một món ăn hoàn hảo cho
+                những ai yêu thích sự kết hợp giữa hương vị tươi mới và sự phong
+                phú trong từng lớp nguyên liệu. Vị ngọt của cà chua tươi kết hợp
+                với gà xé mềm, mang đến một sự hòa quyện đầy hấp dẫn. Húng quế
+                tươi không chỉ làm nổi bật hương vị của món ăn mà còn tạo thêm
+                sự tươi mát, giúp cân bằng các thành phần khác.
+              </p>
+
+              <p>
+                Lớp vỏ pizza giòn tan, nhẹ nhàng, được nướng vàng đều, tạo nên
+                sự kết hợp tuyệt vời với lớp phô mai tan chảy mềm mịn, bao phủ
+                toàn bộ mặt trên của pizza. Mỗi miếng pizza là một sự kết hợp
+                hoàn hảo giữa các nguyên liệu tươi ngon, từ gà tươi đến các loại
+                gia vị và thảo mộc tự nhiên, mang lại hương vị đậm đà mà không
+                hề ngấy.
+              </p>
+              <blockquote class="border-start">
+                <p class="ps-3">
+                  “Tôi rất vui khi bạn ghé thăm blog này và hy vọng bạn tìm thấy
+                  những nội dung hữu ích. Mỗi bài viết đều được tạo ra với rất
+                  nhiều tâm huyết và thời gian, giúp bạn có thêm kiến thức, cảm
+                  hứng, hoặc giải pháp cho vấn đề của mình. Nếu bạn cảm thấy
+                  những gì tôi chia sẻ có giá trị, hãy cân nhắc ủng hộ bằng
+                  chuyển khoản. Điều đó sẽ giúp tôi tiếp tục duy trì blog và
+                  mang đến những bài viết chất lượng hơn. Cảm ơn bạn rất nhiều!”
+                  <br />
+                  <cite>Chu Tuan Vu</cite>
+                </p>
+              </blockquote>
+              <p>
+                Pizza này không chỉ ngon miệng mà còn bổ dưỡng, là lựa chọn
+                tuyệt vời cho những bữa ăn gia đình, bạn bè hay các buổi tụ họp.
+                Món ăn không chỉ làm hài lòng khẩu vị mà còn mang đến một bữa ăn
+                đầy đủ dinh dưỡng, từ protein trong gà đến các vitamin và khoáng
+                chất có trong cà chua và húng quế.
+              </p>
+
+              <p>
+                Hãy thử thưởng thức chiếc pizza này trong lần tiếp theo khi bạn
+                muốn tìm kiếm một món ăn vừa ngon, vừa lành mạnh. Sự kết hợp
+                hoàn hảo giữa gà, cà chua, húng quế và phô mai sẽ khiến bạn
+                không thể cưỡng lại được!
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <section class="gradient-custom">
+              <div class="col-md-12 col-lg-10 col-xl-8">
+                <div class="card">
+                  <div class="card-body p-4">
+                    <h4 class="mb-4 pb-2">6 bình luận</h4>
+                    <div class="row">
+                      <div class="col">
+                        <div class="d-flex flex-start">
+                          <img
+                            class="rounded-circle me-3"
+                            src="/img/nguyenquocanh.jpg"
+                            alt="avatar"
+                            width="65"
+                            height="65"
+                          />
+                          <div class="flex-grow-1 flex-shrink-1">
+                            <div>
+                              <div
+                                class="d-flex justify-content-between align-items-center"
+                              >
+                                <p class="mb-1">
+                                  Nguyễn Quốc Anh
+                                  <span class="small">- 2 giờ trước</span>
+                                </p>
+                                <a href="#!"
+                                  ><i class="fas fa-reply fa-xs"></i
+                                  ><span class="small">Trả lời</span></a
+                                >
+                              </div>
+                              <p class="small mb-0">Để anh ấy nấu</p>
+                            </div>
+                            <div class="d-flex flex-start mt-4">
+                              <a class="me-3" href="#">
+                                <img
+                                  class="rounded-circle"
+                                  src="/img/phamhoangvietanh.jpg"
+                                  alt="avatar"
+                                  width="65"
+                                  height="65"
+                                />
+                              </a>
+                              <div class="flex-grow-1 flex-shrink-1">
+                                <div>
+                                  <div
+                                    class="d-flex justify-content-between align-items-center"
+                                  >
+                                    <p class="mb-1">
+                                      Phạm Hoàng Việt Anh
+                                      <span class="small">- 3 giờ trước</span>
+                                    </p>
+                                  </div>
+                                  <p class="small mb-0">
+                                    Để anh ấy nấu đi, biết đâu lại thành siêu
+                                    đầu bếp của Đóm
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="d-flex flex-start mt-4">
+                              <a class="me-3" href="#">
+                                <img
+                                  class="rounded-circle"
+                                  src="/img/lesanghuc.jpg"
+                                  alt="avatar"
+                                  width="65"
+                                  height="65"
+                                />
+                              </a>
+                              <div class="flex-grow-1 flex-shrink-1">
+                                <div>
+                                  <div
+                                    class="d-flex justify-content-between align-items-center"
+                                  >
+                                    <p class="mb-1">
+                                      Lee-Sang-Huc
+                                      <span class="small">- 4 giờ trước</span>
+                                    </p>
+                                  </div>
+                                  <p class="small mb-0">너무 사랑해요</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-start mt-4">
+                          <img
+                            class="rounded-circle me-3"
+                            src="/img/nguyenduytuan.jpg"
+                            alt="avatar"
+                            width="65"
+                            height="65"
+                          />
+                          <div class="flex-grow-1 flex-shrink-1">
+                            <div>
+                              <div
+                                class="d-flex justify-content-between align-items-center"
+                              >
+                                <p class="mb-1">
+                                  Trịnh Trần Duy Tuấn
+                                  <span class="small">- 2 giờ trước</span>
+                                </p>
+                                <a href="#!"
+                                  ><i class="fas fa-reply fa-xs"></i
+                                  ><span class="small">Trả lời</span></a
+                                >
+                              </div>
+                              <p class="small mb-0">
+                                Bạn nào là đóm muốn ăn thì liên hệ mình nấu cho
+                              </p>
+                            </div>
+
+                            <div class="d-flex flex-start mt-4">
+                              <a class="me-3" href="#">
+                                <img
+                                  class="rounded-circle"
+                                  src="/img/doducthuy.jpg"
+                                  alt="avatar"
+                                  width="65"
+                                  height="65"
+                                />
+                              </a>
+                              <div class="flex-grow-1 flex-shrink-1">
+                                <div>
+                                  <div
+                                    class="d-flex justify-content-between align-items-center"
+                                  >
+                                    <p class="mb-1">
+                                      Đỗ Đức Thụy
+                                      <span class="small">- 4 giờ trước</span>
+                                    </p>
+                                  </div>
+                                  <p class="small mb-0">
+                                    Mình là đóm đây! Bạn có nấu theo yêu cầu
+                                    không?
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="d-flex flex-start mt-4">
+                              <a class="me-3" href="#">
+                                <img
+                                  class="rounded-circle"
+                                  src="/img/nguyenquocanh.jpg"
+                                  alt="avatar"
+                                  width="65"
+                                  height="65"
+                                />
+                              </a>
+                              <div class="flex-grow-1 flex-shrink-1">
+                                <div>
+                                  <div
+                                    class="d-flex justify-content-between align-items-center"
+                                  >
+                                    <p class="mb-1">
+                                      Nguyễn Quốc Anh
+                                      <span class="small">- 5 giờ trước</span>
+                                    </p>
+                                  </div>
+                                  <p class="small mb-0">
+                                    Ôi, nghe hấp dẫn quá! Bạn cho mình xin thực
+                                    đơn và giá cả nhé. Còn không bạn có thể về
+                                    nhà nấu cho mình không?
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <section>
+              <div class="card">
+                <div class="card-body p-4">
+                  <div class="d-flex flex-start w-100">
+                    <img
+                      class="rounded-circle me-3"
+                      src="img/account.jpg"
+                      alt="avatar"
+                      width="65"
+                      height="65"
+                    />
+                    <div class="w-100">
+                      <h5>Thêm bình luận</h5>
+                      <div data-mdb-input-init class="form-outline">
+                        <textarea
+                          class="form-control"
+                          id="textAreaExample"
+                          rows="4"
+                        ></textarea>
+                      </div>
+                      <div class="d-flex justify-content-between mt-3">
+                        <button type="button" class="btn btn-danger">
+                          Gửi
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+      style="width: 300px"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Giỏ hàng</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="container cart"></div>
+      </div>
+      <div class="offcanvas-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col d-flex flex-column pb-3">
+              <a class="btn btn-warning" href="/cart.html" role="button"
+                >Xem giỏ hàng</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/blog-detail.js"></script>
+  <script src="/js/oneForAll.js"></script>
+</html>

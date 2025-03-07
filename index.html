@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U Food - Thực phẩm sạch</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/css/imgeffect.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/oneForAll.css" />
+    <link rel="shortcut icon" href="img/ico.ico" type="image/x-icon" />
+  </head>
+  <body style="background: antiquewhite">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img
+              src="/img/u-food.png"
+              alt="U Food"
+              width="50px"
+              height="auto"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar"
+            aria-controls="navbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <form role="search" class="mx-auto">
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Tìm kiếm"
+                  aria-label="Tìm kiếm"
+                  tabindex="-1"
+                />
+                <button class="btn btn-outline-success" type="submit">
+                  Tìm kiếm
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Khuyến mại</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Hỗ trợ
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Trợ giúp</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Liên hệ với chúng tôi</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog.html">Blog</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a
+                  class="nav-link position-relative"
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasExample"
+                  role="button"
+                  aria-controls="offcanvasExample"
+                  >Giỏ hàng
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none"
+                    id="cart-length"
+                    >0
+                  </span></a
+                >
+              </li>
+              <li class="nav-item button-group">
+                <div class="dropdown text-end d-none" id="avatar">
+                  <a
+                    href="#"
+                    class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="true"
+                  >
+                    <img
+                      src="/img/account.jpg"
+                      alt="account"
+                      width="32"
+                      height="32"
+                      class="rounded-circle"
+                    />
+                    <strong id="avatarUsername"></strong>
+                  </a>
+                  <ul
+                    class="dropdown-menu text-small"
+                    style="
+                      position: absolute;
+                      inset: 0px 0px auto auto;
+                      margin: 0px;
+                      transform: translate(0px, 34px);
+                    "
+                    data-popper-placement="bottom-end"
+                  >
+                    <li><a class="dropdown-item" href="#">Cài đặt</a></li>
+                    <li><a class="dropdown-item" href="#">Thông tin</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item logout" href="#">Đăng xuất</a>
+                    </li>
+                  </ul>
+                </div>
+                <div id="control">
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Đăng nhập
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Đăng ký
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5">Đăng nhập / Đăng ký</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="d-grid">
+                <label class="form-label">Tên người dùng</label>
+                <input
+                  id="username"
+                  type="text"
+                  class="form-control"
+                  name="username"
+                  required
+                />
+              </div>
+              <div class="d-grid">
+                <label class="form-label">Mật khẩu:</label>
+                <input
+                  id="pass"
+                  type="password"
+                  class="form-control mb-2"
+                  name="pass"
+                  placeholder="************"
+                  required
+                />
+                <div class="invalid-feedback">
+                  Tên người dùng hoặc mật khẩu không chính xác!
+                </div>
+                <button class="btn btn-primary btn-login">Đăng nhập</button>
+                <p><a href="#">Quên mật khẩu?</a></p>
+              </div>
+              <div class="d-grid control">
+                <p class="text-divider text-center">
+                  hoặc đăng nhập/đăng ký với
+                </p>
+                <button type="button" class="btn btn-primary mb-2">
+                  <img src="/img/google.png" alt="" />Google
+                </button>
+                <button type="button" class="btn btn-primary">
+                  <img src="/img/facebook.png" alt="" />Facebook
+                </button>
+              </div>
+            </div>
+            <div class="modal-footer text-center">
+              <p>
+                Bằng cách đăng ký, bạn đồng ý với
+                <a href="termsandconditions.html">Điều khoản &amp; Điều kiện</a>
+                của chúng tôi và bạn đã đọc
+                <a href="privacy-notice.html">Chính Sách Quyền Riêng Tư</a>
+                của chúng tôi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+        style="width: 300px"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Giỏ hàng</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="container cart"></div>
+        </div>
+        <div class="offcanvas-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col d-flex flex-column pb-3">
+                <a class="btn btn-warning" href="/cart.html" role="button"
+                  >Xem giỏ hàng</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="liveToast"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          data-bs-delay="1000"
+        >
+          <div class="toast-header">
+            <strong class="me-auto">Thông báo</strong>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body" id="toast-body">
+            Bạn phải đăng nhập để có thể thêm sản phẩm vào giỏ hàng.
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="carousel pt-5">
+      <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#myCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/img/carousel1.jpg" class="img-fluid" alt="" />
+            <div class="carousel-caption">
+              <h1>Chào Mừng Đến Với Nông Trại Của Chúng Tôi</h1>
+              <p>Sản Phẩm Sữa</p>
+              <p>Tươi Từ Nông Trại</p>
+              <a class="btn btn-primary" href="/shop.html">Xem Thêm</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="/img//carousel2.jpg" class="img-fluid" alt="" />
+            <div class="carousel-caption text-start">
+              <h1>Sản Phẩm Địa Phương</h1>
+              <p class="opacity-75">Chất Lượng Cao Cấp</p>
+              <a class="btn btn-primary" href="/shop.html"
+                >Khám Phá Sản Phẩm Của Chúng Tôi</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main>
+      <div class="container my-5 shop-banner">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card zo zo-hover">
+              <img class="card-img" src="/img/h1-banner (1).jpg" />
+              <div class="card-img-overlay">
+                <h5 class="card-title ct" style="color: #0a472e">
+                  Khám Phá<br />
+                  Hương Vị<br />
+                  Tự Nhiên Nhất
+                </h5>
+                <a class="shop-now" href="/shop.html"> Mua ngay </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card zo zo-hover">
+              <img class="card-img" src="/img/h1-banner (2).jpg" />
+              <div class="card-img-overlay">
+                <h5 class="card-title ct" style="color: #ffff">
+                  Mật Ong Cao Cấp<br />Với Chất Lượng<br />Tốt Nhất
+                </h5>
+                <a class="shop-now" href="#"> Mua ngay </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card zo zo-hover">
+              <img class="card-img" src="/img/h1-banner (3).jpg" />
+              <div class="card-img-overlay">
+                <h5 class="card-title ct" style="color: #ffff">
+                  Giải Độc <br />
+                  Với Rau Xanh <br />
+                  và Trái Cây
+                </h5>
+                <a class="shop-now" href="/shop.html"> Mua ngay </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-5 pt-4 rounded bg-white shop-new">
+        <div class="row">
+          <div class="col">
+            <div class="shop-header d-flex justify-content-between">
+              <h2 class="heading-title">Sản phẩm mới</h2>
+              <div class="catalog">
+                <ul class="list-group list-group-horizontal">
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Hạt &amp; ngũ cốc</button>
+                  </li>
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Dầu</button>
+                  </li>
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Trái cây</button>
+                  </li>
+                  <li class="list-group-item border-start">
+                    <a
+                      class="btn text-decoration-underline"
+                      href="/shop.html"
+                      role="button"
+                      >Tất cả</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-3" />
+        <div class="row">
+          <div class="col-3">
+            <div class="card tf zi zi-hover">
+              <img src="/img/shop-new.jpg" class="img-fluid" alt="" />
+              <div class="card-img-overlay tran-y-10 text-center">
+                <p class="subtitle text-white fs-4">Giảm giá đông</p>
+                <h2 class="title fs-1">Giảm 10%</h2>
+                <p class="description text-white fs-0875">Tất cả hoa quả</p>
+                <a
+                  class="btn buy-now tran-y-10 opacity-0"
+                  href="/shop.html"
+                  role="button"
+                  >Mua ngay</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-9">
+            <div
+              id="recipeCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" id="news" role="listbox"></div>
+              <a
+                class="carousel-control-prev"
+                href="#recipeCarousel"
+                role="button"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#recipeCarousel"
+                role="button"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-5 pt-4 rounded bg-white shop-sale">
+        <div class="row">
+          <div class="col">
+            <div class="shop-header d-flex justify-content-between my-3">
+              <div>
+                <h2 class="heading-title">Đang giảm giá</h2>
+              </div>
+              <div class="catalog">
+                <ul class="list-group list-group-horizontal">
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Hạt &amp; ngũ cốc</button>
+                  </li>
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Dầu</button>
+                  </li>
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Trái cây</button>
+                  </li>
+                  <li class="list-group-item border-start">
+                    <a
+                      class="btn text-decoration-underline"
+                      href="/shop.html"
+                      role="button"
+                      >Tất cả</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-3" />
+        <div class="row">
+          <div class="col-3">
+            <div class="card tf zi zi-hover">
+              <img class="card-img" src="img/shop-sale.jpg" alt="" />
+              <div class="card-img-overlay tran-y-10 text-center">
+                <p class="subtitle text-white fs-4">Giảm giá theo mùa</p>
+                <h2 class="title fs-1">Giảm 20.000 VNĐ</h2>
+                <p class="description text-white fs-0875">Sản phẩm thô</p>
+                <a
+                  class="btn buy-now tran-y-10 opacity-0"
+                  href="/shop.html"
+                  role="button"
+                  >Mua ngay</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-9">
+            <div
+              id="recipeCarousel1"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" id="sales" role="listbox"></div>
+              <a
+                class="carousel-control-prev"
+                href="#recipeCarousel1"
+                role="button"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#recipeCarousel1"
+                role="button"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-5 shop-subscribe">
+        <div class="row">
+          <div class="col-8">
+            <div class="card">
+              <img
+                src="/img/subscribe (1).jpg"
+                class="img-fluid card-img"
+                alt=""
+                style="height: 300px"
+              />
+              <div class="card-img-overlay text-center">
+                <h3 class="card-title">
+                  Nguyên liệu hữu cơ<br />
+                  Dễ dàng chế biến<br />
+                </h3>
+                <span>
+                  <a
+                    class="shop-now text-decoration-underline"
+                    href="/shop.html"
+                  >
+                    Mua ngay
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card">
+              <img
+                src="/img/subscribe (2).jpg"
+                class="img-fluid card-img"
+                alt=""
+                style="height: 300px"
+              />
+              <div class="card-img-overlay">
+                <img src="/img/open-envelope.png" class="img" alt="" />
+
+                <h4 class="card-title">
+                  Nhận thông báo <br />Đăng ký và nhận voucher trị giá 500.000
+                  VNĐ
+                </h4>
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Địa chỉ email"
+                    aria-describedby="button-addon2"
+                    required
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    <img src="/img/arrow-right.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-5 pt-4 rounded bg-white shop-popular">
+        <div class="row">
+          <div class="col">
+            <div class="shop-header d-flex justify-content-between my-3">
+              <div>
+                <h2 class="heading-title">Sản phẩm phổ biến</h2>
+              </div>
+              <div class="catalog">
+                <ul class="list-group list-group-horizontal">
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Hạt &amp; ngũ cốc</button>
+                  </li>
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Dầu</button>
+                  </li>
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Trái cây</button>
+                  </li>
+                  <li class="list-group-item border-start">
+                    <a
+                      class="btn text-decoration-underline"
+                      href="/shop.html"
+                      role="button"
+                      >Tất cả</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-3" />
+        <div class="row">
+          <div class="col-3">
+            <div class="card tf zi zi-hover">
+              <img class="card-img" src="img/shop-popular.jpg" alt="" />
+              <div class="card-img-overlay tran-y-10 text-center">
+                <p class="subtitle text-white fs-4">Nổi bật tuần này</p>
+                <h2 class="title fs-1">Giảm 10.000 VNĐ</h2>
+                <p class="description text-white fs-0875">
+                  Gia vị &amp; hương liệu
+                </p>
+                <a
+                  class="btn buy-now tran-y-10 opacity-0"
+                  href="/shop.html"
+                  role="button"
+                  >Mua ngay</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-9">
+            <div
+              id="recipeCarousel2"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" id="populars" role="listbox"></div>
+              <a
+                class="carousel-control-prev"
+                href="#recipeCarousel2"
+                role="button"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#recipeCarousel2"
+                role="button"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-5 pt-4 rounded bg-white shop-rated">
+        <div class="row">
+          <div class="col">
+            <div class="shop-header d-flex justify-content-between my-3">
+              <div>
+                <h2 class="heading-title">Được đánh giá cao</h2>
+              </div>
+              <div class="catalog">
+                <ul class="list-group list-group-horizontal">
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Hạt &amp; ngũ cốc</button>
+                  </li>
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Dầu</button>
+                  </li>
+                  <li class="list-group-item">
+                    <button type="button" class="btn">Trái cây</button>
+                  </li>
+                  <li class="list-group-item border-start">
+                    <a
+                      class="btn text-decoration-underline"
+                      href="/shop.html"
+                      role="button"
+                      >Tất cả</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-3" />
+        <div class="row">
+          <div class="col-3">
+            <div class="card tf zi zi-hover">
+              <img class="card-img" src="img/shop-rated.jpg" alt="" />
+              <div class="card-img-overlay tran-y-10 text-center">
+                <p class="subtitle text-white fs-4">Mua 2 tặng 1</p>
+                <h2 class="title fs-1">Giảm 20%</h2>
+                <p class="description text-white fs-0875">
+                  Đến hết ngày 29 tháng 11
+                </p>
+                <a
+                  class="btn buy-now tran-y-10 opacity-0"
+                  href="/shop.html"
+                  role="button"
+                  >Mua ngay</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-9">
+            <div
+              id="recipeCarousel3"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" id="top-rateds" role="listbox"></div>
+              <a
+                class="carousel-control-prev"
+                href="#recipeCarousel3"
+                role="button"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+              <a
+                class="carousel-control-next"
+                href="#recipeCarousel3"
+                role="button"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-5 pt-4 rounded bg-white shop-catalog">
+        <div class="row">
+          <div class="col">
+            <h2 class="heading-title">Danh mục</h2>
+          </div>
+        </div>
+        <hr class="my-3" />
+        <div class="row">
+          <div class="col-2 border-end">
+            <div class="card">
+              <img
+                src="/img/ctl (1).jpg"
+                class="img-fluid card-img opacity-75"
+                alt=""
+                style="height: 200px"
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">Trái cây &amp; rau củ</h5>
+                <ul class="card-text">
+                  <li>Hạt &amp; ngũ cốc</li>
+                  <li>Dầu</li>
+                  <li>Trái cây</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 border-end">
+            <div class="card">
+              <img
+                src="/img/ctl (2).jpg"
+                class="img-fluid card-img opacity-75"
+                alt=""
+                style="height: 200px"
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">Sữa</h5>
+                <ul class="card-text">
+                  <li>Hạt &amp; ngũ cốc</li>
+                  <li>Dầu</li>
+                  <li>Trái cây</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 border-end">
+            <div class="card">
+              <img
+                src="/img/ctl (3).jpg"
+                class="img-fluid card-img opacity-75"
+                alt=""
+                style="height: 200px"
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">Đóng gói</h5>
+                <ul class="card-text">
+                  <li>Hạt &amp; ngũ cốc</li>
+                  <li>Dầu</li>
+                  <li>Trái cây</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 border-end">
+            <div class="card">
+              <img
+                src="/img/ctl (4).jpg"
+                class="img-fluid card-img opacity-75"
+                alt=""
+                style="height: 200px"
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">Đồ uống</h5>
+                <ul class="card-text">
+                  <li>Hạt &amp; ngũ cốc</li>
+                  <li>Dầu</li>
+                  <li>Trái cây</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-2 border-end">
+            <div class="card">
+              <img
+                src="/img/ctl (5).jpg"
+                class="img-fluid card-img opacity-75"
+                alt=""
+                style="height: 200px"
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">Sức khỏe</h5>
+                <ul class="card-text">
+                  <li>Hạt &amp; ngũ cốc</li>
+                  <li>Dầu</li>
+                  <li>Trái cây</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-2">
+            <div class="card">
+              <img
+                src="/img/ctl (6).jpg"
+                class="img-fluid card-img opacity-75"
+                alt=""
+                style="height: 200px"
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">Tạp hóa</h5>
+                <ul class="card-text">
+                  <li>Hạt &amp; ngũ cốc</li>
+                  <li>Dầu</li>
+                  <li>Trái cây</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container my-5 bg-white shop-end">
+        <div class="row">
+          <div class="col d-flex">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="/img/curated-products.png"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Sản phẩm được chọn lọc</h5>
+                    <p class="card-text">từ những người bán được tuyển chọn</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/img/handmade.png" class="img-fluid" alt="" />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Thủ công</h5>
+                    <p class="card-text">
+                      Từ 300+ nhà chế tác trên khắp cả nước
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/img/natural.png" class="img-fluid" alt="" />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">100% tự nhiên</h5>
+                    <p class="card-text">
+                      Sản phẩm địa phương, gần gũi với thiên nhiên hơn.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/img/shipping.png" class="img-fluid" alt="" />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Giao hàng</h5>
+                    <p class="card-text">Trên khắp miền Bắc.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/img/save-money.png" class="img-fluid" alt="" />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Tiết kiệm tiền</h5>
+                    <p class="card-text">Với giá thấp nhất.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-white">
+      <div class="container-fluid">
+        <div class="row pt-5">
+          <div class="col">
+            <img src="/img/u-food.png" class="img-fluid" alt="" width="100px" />
+          </div>
+          <div class="col border-end">
+            <h2>Địa chỉ</h2>
+            <p class="a">Bình Minh - Khoái Châu - Hưng Yên</p>
+            <p class="a">
+              Thứ hai - Thứ bảy: <br /><span style="color: #000000"
+                >8:00 sa - 4:00 ch</span
+              >
+            </p>
+            <p class="a">
+              Chủ nhật: <br /><span style="color: #000000"
+                >9:00 sa - 5:00 ch</span
+              >
+            </p>
+          </div>
+          <div class="col">
+            <h2>Về U Food</h2>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#"><span>Cách đặt hàng</span></a>
+              </li>
+              <li>
+                <a href="#"><span>Liên hệ chúng tôi</span></a>
+              </li>
+              <li>
+                <a href="#"><span>Trợ giúp</span></a>
+              </li>
+              <li><a href="#">Về chúng tôi</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Tài khoản</h2>
+            <ul class="list-unstyled">
+              <li><a href="#">Tài khoản của tôi</a></li>
+              <li><a href="#">Liên hệ</a></li>
+              <li>
+                <a
+                  data-bs-toggle="offcanvas"
+                  href="#offcanvasExample"
+                  role="button"
+                  aria-controls="offcanvasExample"
+                  >Giỏ hàng</a
+                >
+              </li>
+              <li><a href="/shop.html">Mua sắm</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h2>Danh mục</h2>
+            <ul class="list-unstyled">
+              <li><a href="#">Trái cây &amp; Rau củ</a></li>
+              <li><a href="#">Sữa</a></li>
+              <li><a href="#">Thực phẩm đóng gói</a></li>
+              <li><a href="#">Đồ uống</a></li>
+              <li><a href="#">Thể chất &amp; Tinh thần</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Theo dõi</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a href="https://www.facebook.com/chutuanvu0206"
+                  ><img
+                    src="/img/facebook.png"
+                    class="img-fluid"
+                    alt="Facebook"
+                  />
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/chutuanvu0206"
+                  ><img
+                    src="/img/instagram.png"
+                    class="img-fluid"
+                    alt="Instagram"
+                  />Instagram</a
+                >
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@chutuanvu0206"
+                  ><img
+                    src="/img/tikTok.png"
+                    class="img-fluid"
+                    alt="TikTok"
+                  />TikTok</a
+                >
+              </li>
+              <li>
+                <a href="https://youtube.com/@chutuanvu2004"
+                  ><img
+                    src="/img/youtube.png"
+                    class="img-fluid"
+                    alt="YouTube"
+                  />YouTube</a
+                >
+              </li>
+              <li>
+                <a href="https://t.me/chutuanvu0206"
+                  ><img
+                    src="img/telegram.png"
+                    class="img-fluid"
+                    alt="Telegram"
+                  />Telegram</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <hr />
+        </div>
+        <div class="row">
+          <div class="col">
+            <p class="text-center py-4">
+              Copyright © 2024 U Food. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/oneForAll.js"></script>
+  <script src="/js/script.js"></script>
+</html>

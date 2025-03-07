@@ -1,0 +1,37 @@
+.list-view {
+  .zi img {
+    transform: none !important;
+    transition: none !important;
+  }
+  .zi-hover:hover img {
+    transform: none !important;
+  }
+  hr {
+    max-width: 200px;
+  }
+  .row {
+    > [class*="col-"] {
+      flex: 0 0 100%;
+    }
+  }
+  .card {
+    @media (max-width: 575.98px) {
+      flex-direction: column;
+    }
+    flex-direction: row;
+    > .card-img-top {
+      width: auto;
+    }
+    .card-img-top {
+      border: 1px solid #ebebeb;
+      max-height: 300px;
+      max-width: 300px;
+    }
+    .card-body {
+      text-align: left !important;
+    }
+    .d-none {
+      display: block !important;
+    }
+  }
+}

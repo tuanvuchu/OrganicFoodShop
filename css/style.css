@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "Mazzard Soft";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Mazzard Soft"), url("/font/MazzardSoftMLight.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Greatest Richmond";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Greatest Richmond"),
+    url("/font/GreatestRichmond.woff") format("woff");
+}
+
+@media (max-width: 767px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .carousel-inner .carousel-item-end.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+  }
+
+  .carousel-inner .carousel-item-start.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+  }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start {
+  transform: translateX(0);
+}
+
+header {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+section {
+  font-family: "Mazzard Soft", "Helvetica", "Lucida Grande", sans-serif;
+}
+
+.price {
+  color: #a8b324;
+}
+main {
+  font-family: "Mazzard Soft", "Helvetica", "Lucida Grande", sans-serif;
+  .ct {
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  .add-to-cart {
+    color: #a8b324;
+  }
+
+  .heading-title {
+    font-weight: 700;
+    line-height: 30px;
+    color: #0a472e;
+  }
+  .subtitle {
+    font-family: "Greatest Richmond";
+    line-height: 43px;
+  }
+
+  .title {
+    color: #f0dd78;
+    font-weight: 700;
+  }
+
+  .card-title {
+    color: #0a472e;
+  }
+  .description {
+    line-height: 25px;
+  }
+  .btn {
+    text-decoration: none;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    font-weight: 700;
+    line-height: 22px;
+    font-size: 12px;
+  }
+  .btn:hover {
+    color: #bac34e;
+    background-color: #ffffff;
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  border-radius: 50%;
+  background-color: black !important;
+  top: 50%;
+  height: 30px;
+  width: 30px;
+  padding: 0 10px;
+}
+
+.carousel-caption p {
+  font-family: "Greatest Richmond";
+  font-size: 72px;
+  line-height: 72px;
+}
+
+.shop-now {
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 700;
+  color: #000000;
+  border-color: #000000;
+  border-width: 0px 0px 1px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+.shop-now:hover {
+  color: #ffffff;
+}
+
+.carousel-item-next {
+  display: block;
+  position: relative;
+}
+
+.carousel-item-next {
+  display: block;
+  position: relative;
+}
+
+.modal {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  .modal-title {
+    color: #03121a;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .modal-content {
+    min-height: 200px;
+    width: 432px;
+    max-width: 600px;
+  }
+  .user,
+  .pwd {
+    color: #687176;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .form-control {
+    color: #03121a;
+  }
+}
+
+.shop-end .card-text {
+  color: #555;
+}

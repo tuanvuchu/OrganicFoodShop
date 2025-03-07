@@ -1,0 +1,40 @@
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+.navbar {
+  transition: transform 0.3s ease;
+}
+
+.carousel-item {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.zo img {
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
+}
+.zo-hover:hover img {
+  transform: scale(1);
+}
+
+.zi img {
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+.zi-hover:hover img {
+  transform: scale(1.05);
+}
+
+.tran-y-10 {
+  transform: translateY(60px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.tf:hover .tran-y-10 {
+  transform: translateY(0);
+  opacity: 1 !important;
+}
